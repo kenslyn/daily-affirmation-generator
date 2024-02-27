@@ -1,5 +1,4 @@
 function displayAffirmation(response) {
-  console.log("affirmation generated");
   new Typewriter("#affirmation", {
     strings: response.data.answer,
     autoStart: true,
