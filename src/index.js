@@ -1,12 +1,24 @@
-function generateAffirmation(event) {
-  event.preventDefault();
-
+function displayAffirmation(response) {
+  console.log("affirmation generated");
   new Typewriter("#affirmation", {
-    strings: ["I love myself just as I am today."],
+    strings: response.data.answer,
     autoStart: true,
     delay: 20,
     cursor: "",
   });
+}
+
+function generateAffirmation(event) {
+  event.preventDefault();
+
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "bete3d4bc84ffa94be264oaebfb7012c";
+  let context =
+    "You are a positive affirmation expert and love to write short yet meaningful affirmations. Your mission is to generate a line affirmation in basic HTML format with quotation marks. Make sure to follow the user instructions.";
+  let prompt = `User instructions: Generate a positive affirmation about ${instructionsInput.value}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  axios.get(apiURL).then(displayAffirmation);
 }
 
 let affirmationFormElement = document.querySelector(
