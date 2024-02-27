@@ -21,19 +21,22 @@
       </header>
 
       <main>
-        <form id="affirmation-generator-form">
-          <input
-            type="text"
-            placeholder="Enter the affirmation topic..."
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-            id="user-instructions"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="affirmation" id="affirmation"></div>
+        <div class="form-container">
+          <form id="affirmation-generator-form">
+            <input
+              type="text"
+              placeholder="Enter an affirmation topic..."
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">i.e: Self-Love, Gratitude or Boundaries</div>
+        </div>
+        <div class="affirmation hidden" id="affirmation"></div>
       </main>
 
       <footer>
